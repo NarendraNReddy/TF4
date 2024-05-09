@@ -5,6 +5,12 @@ terraform {
       version = "5.48.0"
     }
   }
+ backend "s3" {
+    bucket = "daws78s-nnr1-remote.online"
+    key    = "remote-state-demo1"
+    region = "us-east-1"
+    dynamodb_table="daws78s-nnr1-locking"
+  }
 }
 
 #provide authentication here
